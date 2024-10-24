@@ -11,6 +11,7 @@ fastapi = "^0.115.2"
 uvicorn = "^0.32.0"
 make = "^0.1.6.post2"
 pydentic = "^0.0.1.dev3"
+pydantic-settings = "^2.6.0"
 
 
 [build-system]
