@@ -1,2 +1,2 @@
 run:
-	run uvicorn main:app
+	poetry run uvicorn main:app --env-file .local.env

@@ -9,8 +9,8 @@ tasks = [
     
     { 
       "id": 111,
-      "name": "task 2",
-      "pomodoro_count": 20,
+      "name": None,
+      "pomodoro_count": None,
       "category_id": 2
     },
     
