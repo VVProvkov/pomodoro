@@ -12,6 +12,11 @@ uvicorn = "^0.32.0"
 make = "^0.1.6.post2"
 pydentic = "^0.0.1.dev3"
 pydantic-settings = "^2.6.0"
+sqlalchemy = "^2.0.36"
+alembic = "^1.13.3"
+docker = "^7.1.0"
+psycopg2-binary = "^2.9.10"
+psycopg2 = "^2.9.10"
 
 
 [build-system]
