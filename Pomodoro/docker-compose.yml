@@ -14,3 +14,9 @@ services:
       POSTGRES_DB: pomodoro
     ports: 
       - '5432:5432'
+
+  cache:
+    image: redis:7.2.4-alpine
+    restart: always
+    ports:
+      - '6379:6379'

@@ -1,1 +1,1 @@
-from taskSchema import TaskSchema
+from schema.taskSchema import TaskSchema
