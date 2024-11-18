@@ -1,23 +1,23 @@
 from fastapi import FastAPI, APIRouter, status, Depends
 from pydantic import BaseModel
 from typing import Annotated
-from dependency import get_tasks_repository, get_cache_tasks_repository
+from dependency import get_tasks_repository, get_cache_tasks_repository, get_tasks_service
 from fixtures import tasks as fixtures_tasks
 from schema  import TaskSchema
-from database.database import get_db_session
+from service.task_service import TaskService
+
 from Repository import TaskRepository, TaskCache
 
 router = APIRouter(prefix="/task", tags=["task"])
     
 @router.get("/all", response_model = list[TaskSchema])
+
+
 async def get_tasks(
-    task_repository: Annotated[TaskRepository, Depends(get_tasks_repository)],
-    task_cache: Annotated[TaskCache, Depends(get_cache_tasks_repository)]
+    task_service: Annotated[TaskService, Depends(get_tasks_service)],
 ):
-    tasks = task_repository.get_tasks()
-    tasks_schema = [TaskSchema.model_validate(task) for task in tasks]
-    task_cache.set_tasks(tasks_schema)
-    return tasks
+    return task_service.get_tasks()
+    
 
 
 
